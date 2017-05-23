@@ -12,13 +12,8 @@
 #   Build and Reload Package:  'Ctrl + Shift + B'
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
-
-hello <- function() {
-  print("Hello, world!")
-}
-
 translate <- function(data,code,output){
-  data[substr(data,1,nchar(code)) == code]=output
+  data[substr(data,1,nchar(code)) %in% code]=output
   data
 }
 

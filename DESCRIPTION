@@ -1,6 +1,6 @@
 Package: DataClean
 Type: Package
-Title: Basic convenient function to clean data
+Title: Data Clean Manipulations
 Version: 0.1.0
 Author: Qiuyu(Peter) Long
 Maintainer: Qiuyu(Peter) Long <longqiuyu@nyu.edu>
