@@ -20,3 +20,7 @@ hello <- function() {
 hello_again <- function() {
   print("Hello again, world!")
 }
+
+hello_no <- function() {
+  print("Hello no, world!")
+}
