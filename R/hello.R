@@ -16,3 +16,7 @@
 hello <- function() {
   print("Hello, world!")
 }
+
+hello_again <- function() {
+  print("Hello again, world!")
+}
