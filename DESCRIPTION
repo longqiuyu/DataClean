@@ -7,3 +7,4 @@ Maintainer: Qiuyu(Peter) Long <longqiuyu@nyu.edu>
 Description: Data cleaning, including translate code, set base level for factors
 License: NA
 Encoding: UTF-8
+LazyData: true
