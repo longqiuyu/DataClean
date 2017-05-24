@@ -1,27 +1,23 @@
 \name{translate}
 \alias{translate}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-translate...
-%%  ~~function to do ... ~~
+Translate code into interpretable output
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
-translate...
+Translate codes starting with some certain letters to output.
 }
 \usage{
 translate(data, code, output)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{data}{
-%%     ~~Describe \code{data} here~~
+vector to translate
 }
   \item{code}{
-%%     ~~Describe \code{code} here~~
+original codes (can be a vector of codes)
 }
   \item{output}{
-%%     ~~Describe \code{output} here~~
+interpretable output
 }
 }
 \details{
@@ -50,18 +46,9 @@ translate(data, code, output)
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (data, code, output)
-{
-    data[substr(data, 1, nchar(code)) == code] = output
-    data
-  }
+##Translate "SOP", "SOX" into "Sunday Only"
+freq=c("SOP","SOX","SOP","SOP","SOX")
+codes="SO"
+output="Sunday Only"
+translate(freq,codes,output)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

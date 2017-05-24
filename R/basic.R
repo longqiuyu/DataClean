@@ -27,7 +27,19 @@ recode <- function(data,code_list,output_list,other=TRUE){
   data
 }
 
+
 set_level <- function(data,base=default){
   default=names(which.max(table(data)))
   relevel(as.factor(data),ref=base)
+}
+
+duplicates <- function(dataFrame,var){
+  temp=dataFrame[duplicated(dataFrame[var]) | duplicated(dataFrame[var],fromLast = TRUE),]
+  temp=temp[order(temp[var]),]
+  temp
+}
+
+deduplicates <- function(dataFrame,var,all=FALSE){
+  if (all) return(dataFrame[!(duplicated(dataFrame[var])|duplicated(dataFrame[var],fromLast = TRUE)),])
+  if (!all) return(dataFrame[!duplicated(dataFrame[var]),])
 }
