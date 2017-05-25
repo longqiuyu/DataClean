@@ -18,12 +18,12 @@ translate <- function(data,code,output){
 }
 
 #Extend function Translate to a vector, and interpret to "Other" for codes not mentioned
-recode <- function(data,code_list,output_list,other=TRUE){
+recode <- function(data,code_list,output_list,other="Other"){
   data=as.character(data)
   for (i in 1:length(code_list)){
     data=translate(data,code_list[i],output_list[i])
   }
-  if (other)  data[!data %in% output_list]="Other"
+  data[!data %in% output_list]=other
   data
 }
 
