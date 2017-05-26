@@ -43,3 +43,9 @@ deduplicates <- function(dataFrame,var,all=FALSE){
   if (all) return(dataFrame[!(duplicated(dataFrame[var])|duplicated(dataFrame[var],fromLast = TRUE)),])
   if (!all) return(dataFrame[!duplicated(dataFrame[var]),])
 }
+
+get_next_Tue<-function(date){
+  dow=wday(date)
+  if(dow<=3) return(date+3-dow)
+  if(dow>3) return(date+10-dow)
+}
