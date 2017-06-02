@@ -45,7 +45,7 @@ deduplicates <- function(dataFrame,var,all=FALSE){
 }
 
 get_next_Tue<-function(date){
-  dow=wday(date)
+  dow=wday(as.Date(date))
   if(dow<=3) return(date+3-dow)
   if(dow>3) return(date+10-dow)
 }
