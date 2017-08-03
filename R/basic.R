@@ -29,6 +29,7 @@ recode <- function(data,code_list,output_list,other="Other"){
 
 
 set_level <- function(data,base=default){
+  data <- as.character(data)
   default=names(which.max(table(data)))
   relevel(as.factor(data),ref=base)
 }
