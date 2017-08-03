@@ -50,3 +50,12 @@ get_next_Tue<-function(date){
   if(dow<=3) return(date+3-dow)
   if(dow>3) return(date+10-dow)
 }
+
+date_to_ymd <- function(date){
+  y=year(date)
+  m=month(date)
+  d=day(date)
+  if (m<10) m=paste('0',m,sep='')
+  if (d<10) d=paste('0',d,sep='')
+  return(paste(y,m,d,sep=''))
+}
