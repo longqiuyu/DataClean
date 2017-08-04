@@ -60,3 +60,13 @@ date_to_ymd <- function(date){
   if (d<10) d=paste('0',d,sep='')
   return(paste(y,m,d,sep=''))
 }
+
+get_historical_status <- function(stsp_history, SUB_RRN, date){
+  if (class(date)!="Date") stop("input 'date' is not Date format")
+  temp_history=stsp_history[stsp_history$SUB_RRN==SUB_RRN,]
+  temp_history=temp_history[temp_history$STSP_EFF_DT<=date,]
+  temp_history=temp_history[order(temp_history$STSP_EFF_DT,decreasing = TRUE),]
+  if (dim(temp_history)[1]==0) return ('Active')
+  if (temp_history$STSP_TYPE_CD[1]=="P") return ('Former')
+  if (temp_history$STSP_TYPE_CD[1]=="S") return ('Active')
+}
