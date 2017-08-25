@@ -12,6 +12,7 @@
 #   Build and Reload Package:  'Ctrl + Shift + B'
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
+library(lubridate)
 translate <- function(data,code,output){
   data[substr(data,1,nchar(code)) %in% code]=output
   data
