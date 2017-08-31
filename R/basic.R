@@ -71,3 +71,8 @@ get_historical_status <- function(stsp_history, SUB_RRN, date){
   if (temp_history$STSP_TYPE_CD[1]=="P") return ('Former')
   if (temp_history$STSP_TYPE_CD[1]=="S") return ('Active')
 }
+
+clip <- function(datatable){
+  write.table(datatable,"clipboard",sep="\t",row.names = F)
+}
+
