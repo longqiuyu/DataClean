@@ -53,6 +53,13 @@ get_next_Tue<-function(date){
   if(dow>3) return(date+10-dow)
 }
 
+get_last_Tue<-function(date){
+  date=as.Date(date)-7
+  dow=wday(date)
+  if(dow<=3) return(date+3-dow)
+  if(dow>3) return(date+10-dow)
+}
+
 date_to_ymd <- function(date){
   y=year(date)
   m=month(date)
