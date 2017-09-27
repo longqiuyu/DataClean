@@ -83,3 +83,12 @@ clip <- function(datatable){
   write.table(datatable,"clipboard",sep="\t",row.names = F)
 }
 
+date_to_ymd <- function(date){
+  y=year(date)
+  m=month(date)
+  d=day(date)
+  if (m<10) m=paste('0',m,sep='')
+  if (d<10) d=paste('0',d,sep='')
+  return(paste(y,m,d,sep=''))
+}
+
